@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define new_object(type) (type*)malloc(sizeof(type));
 

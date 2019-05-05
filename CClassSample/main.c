@@ -1,9 +1,11 @@
 #include "Common.h"
 #include "CSuperClass.h"
 #include "CSubClass.h"
+#include "CSingletonClass.h"
 
 void ExecuteSuperClassSample(void);
 void ExecuteSubClassSample(void);
+void ExecuteSingletonClassSample(void);
 
 int main(void)
 {
@@ -16,6 +18,12 @@ int main(void)
     printf("Start Sub Class Sample : \n");
 
     ExecuteSubClassSample();
+
+    printf("\n\n");
+
+    printf("Singleton Class Sample : \n");
+
+    ExecuteSingletonClassSample();
 
     return 0;
 }
@@ -106,3 +114,35 @@ void ExecuteSubClassSample(void)
     CSubClass_Destruct(sub_class);
 }
 
+void ExecuteSingletonClassSample(void)
+{
+    int result = 0;
+
+    CSingletonClass* singleton_class = CSingletonClass_GetInstancce();
+
+    singleton_class->Print(singleton_class);
+
+    singleton_class->SetValue(singleton_class, 1, 2);
+
+    singleton_class->Print(singleton_class);
+
+    result = singleton_class->Add(singleton_class);
+
+    printf("Add Result : %d\n", result);
+
+    result = singleton_class->Sub(singleton_class);
+
+    printf("Sub Result : %d\n", result);
+
+    singleton_class->SetValue(singleton_class, 3, 5);
+
+    singleton_class->Print(singleton_class);
+
+    result = singleton_class->Add(singleton_class);
+
+    printf("Add Result : %d\n", result);
+
+    result = singleton_class->Sub(singleton_class);
+
+    printf("Sub Result : %d\n", result);
+}

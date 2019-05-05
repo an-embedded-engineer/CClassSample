@@ -123,12 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CSingletonClass.c" />
     <ClCompile Include="CSubClass.c" />
     <ClCompile Include="CSuperClass.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
+    <ClInclude Include="CSingletonClass.h" />
     <ClInclude Include="CSubClass.h" />
     <ClInclude Include="CSuperClass.h" />
   </ItemGroup>
